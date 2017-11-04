@@ -10,9 +10,9 @@ cd in dir -> npm install
 
 Step 3:
 -------
-ng serve to start application
+ng serve - to start application
 
-// npm install --save hammerjs @angular/animations@latest @angular/material@latest
+npm install --save hammerjs @angular/animations@latest @angular/material@latest
 
 Ready to use material design now
 Use <md-toolbar> for navbar like menu.
@@ -63,6 +63,8 @@ Create routing module - ng g module app-routing
 	- Update app-routing.module.ts (import router module, routes)
 Create routes.ts
 
+Step 7:
+-------
 
 ##########################################################################################
 
@@ -143,8 +145,20 @@ Angular Router
 	* routerLink
 		+ <a routerLink="/menu">Menu</a>
 
+Traditional websites  	- request site from server, server sends back info.
+			- opening another page -> make another request to server.
+Single Page Applications:
+	- Request web application from server.
+	- Server sends back web app and assets - most resources retrieved in single page load.
+	- user click on link to request new data -> server responds with JSON data, not too much computation.
+	- don't need to reload page again.
+	- similar to desktop applications.
 
-
+Challenges in SPA:	- Search Engine Optimization.
+			- partitioning the responsibility between client and server.
+			- Maintaining history
+			- Analytics
+			- Speeding up the initial page load.
 
 
 
