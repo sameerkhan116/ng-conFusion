@@ -160,5 +160,19 @@ Challenges in SPA:	- Search Engine Optimization.
 			- Analytics
 			- Speeding up the initial page load.
 
+--- Parameters
+	- Paths specified as URL
+	- Router parameters specified in path definition as token.
+    Route Parameters: 
+		- can be specified using a link parameter array while specifying the link
+		  <a *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
+		- can also be used within a method
+		  eg: this.router.navigate['/dishdetail', dish.id];
+
+    ActivatedRoute Service:
+	- provides useful info about routes including: url, params, queryParams
+			
+
+
 
 
