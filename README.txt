@@ -56,6 +56,13 @@ Creating a service:
 	- add method in dish.service.ts
 	- import DishService in app.module and add Dish Service to providers
 
+Step 6:
+-------
+Create routing module - ng g module app-routing
+	- Update app.module.ts
+	- Update app-routing.module.ts (import router module, routes)
+Create routes.ts
+
 
 ##########################################################################################
 
@@ -126,6 +133,16 @@ Angular Router
 - Use browser URL as an instruction
 - HTML5 History API: Gives devs the ability to modify website URL without a page refresh.
 	- pushState(), replaceState(), configure <base href="/">
+- Angular router leverages HTML5 history manipulation to modify browser URL.
+
+- Some angular router terms:
+	* Router Module:
+		+ Routes: {path: "/home", component: HomeComponent}
+	* routerOutlet
+		+ <router-outler></router-outlet>
+	* routerLink
+		+ <a routerLink="/menu">Menu</a>
+
 
 
 
