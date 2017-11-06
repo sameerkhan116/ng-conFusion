@@ -172,7 +172,15 @@ Challenges in SPA:	- Search Engine Optimization.
     ActivatedRoute Service:
 	- provides useful info about routes including: url, params, queryParams
 			
+Angular Forms:
+--------------
+	- two-way data binding
+	- change tracking
+	- form validation and error handling
 
-
+Template-driven form: 
+	- use angular template syntax
+	- bing angular form specific directives with form element
+	- two way data binging using ngModel directive [()]
 
 
