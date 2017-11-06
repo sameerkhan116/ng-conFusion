@@ -191,3 +191,30 @@ Template-driven form:
 	Angular template reference variables:
 		- Template variable set to ngForm or ngModel gives reference to angular 		  directives.
 
+Reactive Forms:
+---------------
+Explicit management of data flowing between non-UI data model and UI-oriented data model.
+	- Create tree of Angular form control objects in component class.
+	- Component class has immediate access to both data model and form control 		  structure.
+
+	Advantages:
+	- Values and validity are always synchronous
+	- Easier to unit test
+
+	Classes:
+	- FormControl: powers individual form control
+	- Form Group: group of FormControl instances
+	- AbstractControl: abstract base class for form control classes
+	- FormArray: numerically indexed array of AbstractControl instances
+
+Form Builder:
+------------
+- Import FormBuilder from @angular/forms
+- reduce repetition and clutter
+- Form Model and Data Model are separate
+- User changes flow from the DOM to the form model
+- 2 methods to populate form model from data model:
+	* setValue():assign form control value
+	* patchValue(): update form control value
+
+
