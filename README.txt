@@ -66,6 +66,7 @@ Create routes.ts
 Step 7:
 -------
 
+
 ##########################################################################################
 
 
@@ -183,4 +184,10 @@ Template-driven form:
 	- bing angular form specific directives with form element
 	- two way data binging using ngModel directive [()]
 
+	*Form Validation*
+		- In angular turn off HTML5 form validation - <form novalidate>
+		- Angular takes over form validation
+
+	Angular template reference variables:
+		- Template variable set to ngForm or ngModel gives reference to angular 		  directives.
 
