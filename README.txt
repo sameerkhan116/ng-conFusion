@@ -222,3 +222,19 @@ For Builder with Validator:
 - Validators should be imported from @angular/forms
 - use FormBuilder to construct reactive form
 
+JS Promises:
+------------
+Request to backend takes time, will cause wait period => bad user experience.
+Asynchronous computation => no waiting, request comes back and some later fixed time.
+
+Promise	- mechanism that supports asynchronous computation
+	- provides proxy for a value that is not necessarily know then
+	- value may be available in the future.
+	- when given - promise is in pending state:
+		- resolved state in success
+		- rejected state when failed
+
+Why promises? 	- Solves the 'callback hell' problem (heavily nested callback code)
+		- Promises can be chained
+		- can immediately return
+
