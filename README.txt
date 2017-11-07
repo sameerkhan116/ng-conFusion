@@ -217,4 +217,8 @@ Form Builder:
 	* setValue():assign form control value
 	* patchValue(): update form control value
 
+For Builder with Validator:
+---------------------------
+- Validators should be imported from @angular/forms
+- use FormBuilder to construct reactive form
 
