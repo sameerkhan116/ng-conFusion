@@ -25,5 +25,5 @@ export class PromotionService {
       setTimeout(() => resolve(PROMOTIONS.filter((promo) => (promo.featured))[0]), 2000);
     });
   }
-  
+
 }
