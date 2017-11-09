@@ -238,3 +238,33 @@ Why promises? 	- Solves the 'callback hell' problem (heavily nested callback cod
 		- Promises can be chained
 		- can immediately return
 
+
+Angular and RxJS
+----------------
+The observer pattern	
+	- software-engineering pattern by gang of four
+	- observable tracks observers
+	- observable notifies observers of state change
+
+Why observables?
+	- Streams - data flows through application
+	- Can be subscribed/unsubscribed
+	- observer does a .subscribe() to get values from observable
+	- Cancelling/retrying request is straightforward
+
+Reactive programming - based around observer pattern
+	- interested in data flow through application
+	- propagation of change through your application
+	- built around "streams"
+
+RxJS 	- JS implementation of observer pattern and reactive programming.
+	- Library for composing asynchronous and event-based programs using observables.
+	- RxJS library provides:
+		• core type - Observable
+		• satellite type - Observer, Schedulers, Subjects
+		• operator inspired by Array extras (map, filter, reduce etc)
+		• to allow handling asynchronous events
+
+Observables all over Angular - Forms, HTTP, AsyncPipe, Change detection
+
+ 
