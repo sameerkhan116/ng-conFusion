@@ -4,6 +4,7 @@ import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Dish } from '../shared/dish';
+import { Comment } from '../shared/comment';
 import { DishService } from '../services/dish.service';
 
 import 'rxjs/add/operator/switchMap';
@@ -20,6 +21,7 @@ import { DISHES } from '../shared/dishes';
 export class DishdetailComponent implements OnInit {
 
 	dish: Dish;
+  comment: Comment;
   dishIds: number[];
   prev: number;
   next: number
@@ -103,13 +105,26 @@ export class DishdetailComponent implements OnInit {
     }
 
     onSubmit() {
-      this.rat = this.ratingForm.value;
-      console.log(this.rat);
+      this.comment = this.prepSaveAuthor();;
+      DISHES[this.dish.id].comments.push(this.comment);
+      console.log(this.comment);
       this.ratingForm.reset({
         author: '',
         rating: '5',
         comment: ''
       });
+    }
+
+    prepSaveAuthor(): Comment {
+      const formModel = this.ratingForm.value;
+      
+      const saveAuthor: Comment = {
+        rating: formModel.rating,
+        comment: formModel.comment,
+        author: formModel.author,
+        date: new Date().toISOString()
+      }
+      return saveAuthor;
     }
 
 }
