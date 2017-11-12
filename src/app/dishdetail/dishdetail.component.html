@@ -42,9 +42,15 @@
 			</md-list-item>
 		</md-list>
 
-		<div [hidden]="dish">
+		<div [hidden]="dish || errMesss">
 			<md-spinner></md-spinner><h4>Loading....please wait</h4>
 		</div>
+
+		<div *ngIf="errMess">
+			<h2>Error</h2>
+			<h4>{{errMess}}</h4>
+		</div>
+
 	</div>
 
 </div>
