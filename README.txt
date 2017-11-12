@@ -337,4 +337,62 @@ Error handling:
 	Process the error using Observable.throw()
 
 
+Representational State Transfer (REST):
+---------------------------------------
+Web services
+	- designed to support interoperability of systems connected over a network.
+		• service oriented arch
+		• standardized way for 2 machines to communicate
+
+	- 2 common approaches:
+		• SOAP - Simple Object Access Protocol - uses XML
+	- REST:
+		• exchange data using XML or JSON
+		• Simpler compared to SOAP
+
+REST
+	- style of software architecture for distributed systems
+	- collection of network architecture principles
+	- 4 design principles:
+		• use HTTP methods explicitly
+		• stateless
+		• expose directory structure (URI)
+		• transfer using XML/JSON
+	- motivation of rest was to capture the characteristics of the web (URI, HTTP etc)
+	- exploits the use of HTTP protocols
+
+REST Concepts:
+	- Nouns (resources) - unconstrained. eg: URL
+	- Verbs - constrained - GET, PUT, POST, DELETE
+	- Representations - constrained - XML, JSON
+
+	- Resource is the key abstraction in REST.
+		• resource is a conceptual mapping to a set of entities.
+		• represented with a global identifier (URI in HTTP)
+
+	- GET <-> READ
+	- POST <-> CREATE
+	- PUT <-> UPDATE
+	- DELETE <-> DELETE
+
+	- HTTP GET: used by clients to request info
+		• GET request transfers data from server to client (in XML/JSON etc)
+
+Stateless server 
+	- server shouldn't track client state
+	- client should track its own state - using cookies, client-side db etc.
+	- client side MVC setup
+
+
+	
+
+
+
+
+
+
+
+
+
+
 
