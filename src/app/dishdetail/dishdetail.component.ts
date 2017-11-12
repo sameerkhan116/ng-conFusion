@@ -21,6 +21,7 @@ import { DISHES } from '../shared/dishes';
 export class DishdetailComponent implements OnInit {
 
 	dish: Dish;
+  dishcopy = null;
   comment: Comment;
   dishIds: number[];
   prev: number;
@@ -60,7 +61,7 @@ export class DishdetailComponent implements OnInit {
       this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
       this.route.params
         .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-        .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); },
+        .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); },
           errmess => this.errMess = <any>errmess);
     }
 
@@ -77,7 +78,7 @@ export class DishdetailComponent implements OnInit {
     createForm(): void {
       this.ratingForm = this.rt.group({
         author: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
-        rating: '',
+        rating: 5,
         comment: ['', [Validators.required]]
       });
 
@@ -108,11 +109,13 @@ export class DishdetailComponent implements OnInit {
 
     onSubmit() {
       this.comment = this.prepSaveAuthor();;
-      DISHES[this.dish.id].comments.push(this.comment);
-      console.log(this.comment);
+      this.dishcopy.comments.push(this.comment);
+      this.dishcopy.save()
+        .subscribe(dish => this.dish = dish);
+      // console.log(this.comment);
       this.ratingForm.reset({
         author: '',
-        rating: '5',
+        rating: 5,
         comment: ''
       });
     }
