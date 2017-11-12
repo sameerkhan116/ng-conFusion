@@ -268,3 +268,72 @@ RxJS 	- JS implementation of observer pattern and reactive programming.
 Observables all over Angular - Forms, HTTP, AsyncPipe, Change detection
 
  
+Networking Essentials:
+----------------------
+Many web apps have a 'cloud' backend .
+Client-server communication 
+	- HTTP with REST API <-> server backend <-> database
+	- Network operations cause unexpected delays
+	- Data is not instantaneously available
+	- HTTP - client server comm. protocol (retrieve hypertext docs from server)
+	- HTTP verbs - HEAD, GET, PUT, POST, DELETE, TRACE, OPTIONS, CONNECT
+
+HTTP:
+	- send request from client to server encoded in HTTP request message. (GET)
+	- server receives req., retrieves data and sends data back. (JSON format)
+
+	- Request message:
+		• Request Line - Method URL Version
+		• Headers - Header Field Name: Value
+		• blank line
+		• body contents
+
+	- Request msg eg:
+		• GET /index.html HTTP/1.1
+		• host: localhost:3000
+		  connection: keep-alive
+		  user-agent: Mozilla/5.0
+		  accept-encoding: gzip, deflate
+		• blank line
+		• empty body
+
+	- Response message:
+		• Status line
+		• Header
+		• blank line
+		• Response data
+
+	- Response msg eg:
+		• HTTP/1.1 200 OK
+		• Connection: keep-alive
+		  Content-Type: text/html
+		  Date: -------
+		  Transfer-Encoding: chunked
+		• Blank line
+		• <html>...</html>
+
+	- Server may send back data in a specific format: XML, JSON
+
+JSON
+	- Lightweight data interchange format.
+	- Language independent
+	- Self-describing, easy to understand
+	- Data is properly structured and ordered list of values
+
+
+Angular HTTP Client:
+--------------------
+Angular supports communication with servers using the HTTP protocol.
+Operation is asynchronous in nature.
+HTTP client returns an Observable. (http.get(URL).subscribe(...);
+http.get(), http.put(), http.jsonp();
+
+HTTP Response:
+	Angular HTTP client follows fetch specification for the response object.
+	body = res.json()
+
+Error handling:
+	HTTP.get(<URL>).map(...).catch(...);
+	Process the error using Observable.throw()
+	
+
