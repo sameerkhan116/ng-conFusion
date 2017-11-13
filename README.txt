@@ -383,10 +383,35 @@ Stateless server
 	- client should track its own state - using cookies, client-side db etc.
 	- client side MVC setup
 
+Attribute Directives:
+---------------------
+Directives - give instructions to Angular on how to render the templates to DOM.
+	- Directives can be defined in angular as a class with @Directive
+	- Component - special kind of directive with template	
 
-	
 
+Attribute Directives 
+	- used as attributes for elements in the template
+	- Listen to and modify behavior of other HTML elements
+	- Built in attribute directives: NgStyle, NgModel, NgClass
 
+Custom Directives:
+	- create our own directives
+	- directive imported from @angular/core
+	- ElementRef also imported from @angular/core, Injected into directive's constructor so that it can be accessed by DOM element. 
+
+Angular Animations:
+-------------------
+	- Use web animations API
+	- Tightly integrate the animation logic with rest of the application code
+	- Animations built around transitions of an element between states
+	- Defined inside @Component metadata
+
+States and transitions:
+	- 'void' state: element not attached to view
+	- '*' any state
+	- void => * is equivalent to :enter
+	- * => void is equivalent to :leave
 
 
 

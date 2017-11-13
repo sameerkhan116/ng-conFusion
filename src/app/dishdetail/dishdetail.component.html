@@ -6,7 +6,7 @@
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
-	<div fxFlex="40" *ngIf="dish">
+	<div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
 		<md-card>
 			<md-card-header>
 				<md-card-title>
@@ -27,12 +27,9 @@
 			</md-card-actions>
 		</md-card>
 
-		<div [hidden]="dish">
-			<md-spinner></md-spinner><h4>Loading....please wait</h4>
-		</div>
 	</div>
 
-	<div fxFlex="40" *ngIf="dish">
+	<div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
 
 		<div>
 
@@ -50,10 +47,6 @@
 					<p md-line>-- {{ratingForm.value.author}} {{ratingForm.value.date | date}}</p>
 				</md-list-item>
 			</md-list>
-
-			<div [hidden]="dish || errMesss">
-				<md-spinner></md-spinner><h4>Loading....please wait</h4>
-			</div>
 
 			<div *ngIf="errMess">
 				<h2>Error</h2>
@@ -86,6 +79,10 @@
 			</form>
 		</div>
 	</div>
+
+	<div [hidden]="dish">
+			<md-spinner></md-spinner><h4>Loading....please wait</h4>
+		</div>
 </div>
 
 
