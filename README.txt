@@ -413,6 +413,46 @@ States and transitions:
 	- void => * is equivalent to :enter
 	- * => void is equivalent to :leave
 
+Angular Testing:
+----------------
+	- Modular implementation with components, services etc.
+	- Dependency Injection
+
+Unit Testing - testing individual units of code
+	- verifying component's logic
+	- isolating unit under test from other dependencies is important
+	- Clear separation in Angular between DOM and logic.
+
+Jasmine - behavior driven development framework for JavaScript
+	- adopted to test Angular applications
+	- use 'describe' function to group tests
+	- use 'it' functions to define individual tests
+
+Karma 	- JS base CLI
+	- spawns web server to load application source code
+	- execute your test in browser
+
+Angular Testing Utilities:
+	- create a test environment for Angular application code under test
+	- Use them to condition and control parts of application within Angular
+	- TestBed creates and Angular testing Module to enable testing of components.
+	- TestBed.createComponent creates instance of component to test.
+	- Gives access to Component Fixture, for testing environment surrounding created 	  component.
+
+
+Building and deployment:
+------------------------
+Webpack	- module bundler for modern JS applications
+	- builds a dependency graph that includes every module your application needs.
+
+	- Bundle: JS file that incorporates assets.
+	- examines application source code for import statements.
+	- config in webpack.config.js
+
+	- Entry: point where webpack should start and follow dependency graph
+	- Output: where to bundle application
+	- Loaders: Loader transforms files into modules as they are added to depth graph.
+	- Plugin: perform actions and custom functionality on compilation
 
 
 
