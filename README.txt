@@ -69,6 +69,12 @@ Step 7:
 
 ##########################################################################################
 
+Full Stack:
+-----------
+Presentation Layer - UI
+Business Logic Layer - Data validation, what data is there
+Data Access Layer - backs Business Logic Layer (contains DBMS)
+
 
 Design Pattern - well documented solution to a recurring problem
 -------------- - reusable

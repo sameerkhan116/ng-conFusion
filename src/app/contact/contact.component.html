@@ -15,14 +15,14 @@
             <div fxFlex="50" fxFlexOffset="20px">
                 <h4>Our Address</h4>
                 <address>
-		              121, Clear Water Bay Road<br>
-		              Clear Water Bay, Kowloon<br>
-		              HONG KONG<br>
-		              <i class="fa fa-phone"></i>: +852 1234 5678<br>
-		              <i class="fa fa-fax"></i>: +852 8765 4321<br>
-		              <i class="fa fa-envelope"></i>: 
+                  121, Clear Water Bay Road<br>
+                  Clear Water Bay, Kowloon<br>
+                  HONG KONG<br>
+                  <i class="fa fa-phone"></i>: +852 1234 5678<br>
+                  <i class="fa fa-fax"></i>: +852 8765 4321<br>
+                  <i class="fa fa-envelope"></i>: 
                         <a href="mailto:confusion@food.net">confusion@food.net</a>
-		           </address>
+               </address>
                <p></p>
                 <div>
                     <a md-raised-button href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
@@ -38,60 +38,92 @@
         </div>
     </div>
 
-      <div fxFlex fxFlexOffset="20px" class="form-size" [@visibility]="visibility" [@expand]>
+      <div fxFlex fxFlexOffset="20px" class="form-size">
         <h3>Send us your Feedback</h3>
-        <p [hidden]="feedbackForm.invalid">{{ feedbackForm.value | json }} {{ feedbackForm.status | json }} </p>
-        <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
-          <p>
-            <md-input-container class="half-width" dividerColor="{{ formErrors.firstname ? 'warn' : 'primary' }}">
-              <input mdInput formControlName="firstname" placeholder="First Name" type="text" required>
-              <md-hint>
-                <span [hidden]="!(formErrors.firstname)">{{formErrors.firstname}}
-                </span>
-              </md-hint>
-            </md-input-container>
-            <md-input-container class="half-width" dividerColor="{{ formErrors.lastname ? 'warn' : 'primary' }}">
-              <input mdInput formControlName="lastname" placeholder="Last Name" type="text" required>
-              <md-hint>
-                <span [hidden]="!(formErrors.lastname)">{{formErrors.lastname}}
-                </span>
-              </md-hint>
-            </md-input-container>
-            <md-input-container class="half-width" dividerColor="{{ formErrors.telnum ? 'warn' : 'primary' }}">
-              <input mdInput formControlName="telnum" placeholder="Phone Number" type="tel" pattern="[0-9]*" required>
-              <md-hint>
-                <span [hidden]="!(formErrors.telnum)">{{formErrors.telnum}}
-                </span>
-              </md-hint>
-            </md-input-container>
-            <md-input-container class="half-width" dividerColor="{{ formErrors.email ? 'warn' : 'primary' }}">
-              <input mdInput formControlName="email" placeholder="Email" type="email" required>
-              <md-hint>
-                <span [hidden]="!(formErrors.email)">{{formErrors.email}}
-                </span>
-              </md-hint>
-            </md-input-container>
-          </p>
-          <table class="form-size">
-            <td>
-              <md-slide-toggle formControlName="agree">May we contact you?</md-slide-toggle>
-            </td>
-            <td>
-              <md-select placeholder="How?" formControlName="contacttype">
-                <md-option *ngFor="let ctype of contactType" [value]="ctype">
-                  {{ ctype }}
-                </md-option>
-              </md-select>
-            </td>
-          </table>
+        <!-- <p [hidden]="feedbackForm.invalid">{{ feedbackForm.value | json }} {{ feedbackForm.status | json }} </p> -->
+        <div [hidden]="submitted" [@expand]>
+          <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" >
+            <p>
+              <md-input-container class="half-width" dividerColor="{{ formErrors.firstname ? 'warn' : 'primary' }}">
+                <input mdInput formControlName="firstname" placeholder="First Name" type="text" required>
+                <md-hint>
+                  <span [hidden]="!(formErrors.firstname)">{{formErrors.firstname}}
+                  </span>
+                </md-hint>
+              </md-input-container>
+              <md-input-container class="half-width" dividerColor="{{ formErrors.lastname ? 'warn' : 'primary' }}">
+                <input mdInput formControlName="lastname" placeholder="Last Name" type="text" required>
+                <md-hint>
+                  <span [hidden]="!(formErrors.lastname)">{{formErrors.lastname}}
+                  </span>
+                </md-hint>
+              </md-input-container>
+              <md-input-container class="half-width" dividerColor="{{ formErrors.telnum ? 'warn' : 'primary' }}">
+                <input mdInput formControlName="telnum" placeholder="Phone Number" type="tel" pattern="[0-9]*" required>
+                <md-hint>
+                  <span [hidden]="!(formErrors.telnum)">{{formErrors.telnum}}
+                  </span>
+                </md-hint>
+              </md-input-container>
+              <md-input-container class="half-width" dividerColor="{{ formErrors.email ? 'warn' : 'primary' }}">
+                <input mdInput formControlName="email" placeholder="Email" type="email" required>
+                <md-hint>
+                  <span [hidden]="!(formErrors.email)">{{formErrors.email}}
+                  </span>
+                </md-hint>
+              </md-input-container>
+            </p>
+            <table class="form-size">
+              <td>
+                <md-slide-toggle formControlName="agree">May we contact you?</md-slide-toggle>
+              </td>
+              <td>
+                <md-select placeholder="How?" formControlName="contacttype">
+                  <md-option *ngFor="let ctype of contactType" [value]="ctype">
+                    {{ ctype }}
+                  </md-option>
+                </md-select>
+              </td>
+            </table>
 
-          <p>
-            <md-input-container class="full-width">
-              <textarea mdInput formControlName="message" placeholder="Your feedback here..." rows="12"> 
-              </textarea>
-            </md-input-container>
-          </p>
-          <button type="submit" md-button class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
-        </form>
+            <p>
+              <md-input-container class="full-width">
+                <textarea mdInput formControlName="message" placeholder="Your feedback here..." rows="12"> 
+                </textarea>
+              </md-input-container>
+            </p>
+            <button type="submit" md-button class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
+          </form>
+        </div>
+
+
+        <div *ngIf="submitted" [@expand]>
+
+          <div *ngIf="feedback; then content else other_content" [@expand]></div>
+            
+            <ng-template #content>
+              <md-list-item>
+                <h3 md-line>Your Submission</h3>
+                <p md-line>First Name: {{feedback.firstname}}</p>
+                <p md-line>Last Name: {{feedback.lastname}}</p>
+                <p md-line>Tel. Number: {{feedback.telnum}}</p>
+                <p md-line>Email: {{feedback.email}}</p>
+                <p md-line>Contact You?: {{feedback.agree}}</p>
+                <p md-line>How?: {{feedback.contacttype}}</p>
+                <p md-line>Feedback: {{feedback.message}}</p>
+              </md-list-item>
+            </ng-template>
+
+            <ng-template #other_content>
+              <h3>Submitting Form</h3>
+              <md-spinner></md-spinner>
+            </ng-template>
+
+        </div>
+
+
+
+        
+
       </div>
 </div>
