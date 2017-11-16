@@ -119,7 +119,7 @@ export class DishdetailComponent implements OnInit {
     }
 
     onSubmit() {
-      this.comment = this.prepSaveAuthor();;
+      this.comment = this.ratingForm.value;
       this.dishcopy.comments.push(this.comment);
       this.dishcopy.save()
         .subscribe(dish => this.dish = dish);
@@ -129,18 +129,6 @@ export class DishdetailComponent implements OnInit {
         rating: 5,
         comment: ''
       });
-    }
-
-    prepSaveAuthor(): Comment {
-      const formModel = this.ratingForm.value;
-      
-      const saveAuthor: Comment = {
-        rating: formModel.rating,
-        comment: formModel.comment,
-        author: formModel.author,
-        date: new Date().toISOString()
-      }
-      return saveAuthor;
     }
 
 }
